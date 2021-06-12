@@ -1,0 +1,98 @@
+The Loop Control Structure:-
+
+Loops: This involves repeating some portion of the program either a specified number of times or until a particular condition is being satisfied. This repetitive operation is done through a loop control instruction.
+
+There are three methods by way of which we can repeat a part of aprogram. They are:
+(a) Using a for statement
+(b) Using a while statement
+(c) Using a do-while statement
+
+The while Loop: It is often the case in programming that you want to do something a fixed number of times. Perhaps you want to calculate gross salaries of ten different persons, or you want to convert temperatures from centigrade to fahrenheit for 15 different cities. 
+example: 
+while ( test loop counter using a condition )
+
+{
+do this ;
+and this ;
+increment loop counter ;
+}
+
+The statements within the while loop would keep on getting executed till the condition being tested remains true. When the condition becomes false, the control passes to the first statement that follows the body of the while loop. In place of the condition there can be any other valid expression. So long as the expression evaluates to a non-zero
+value the statements within the loop would get executed.
+
+THe for Loop:- Setting a loop counter to an initial value.Testing the loop counter to determine whether its value has reached the number of repetitions desired.Increasing the value of loop counter each time the program segment within the loop has been executed.
+
+for ( initialise counter ; test counter ; increment counter )
+{
+
+do this;
+and this;
+and this ;
+
+}
+
+the odd Loop:-The loops that we have used so far executed the statements within them a finite number of times. However, in real life programming one comes across a situation when it is not known beforehand how many times the statements in the loop are to be executed.the do-while loop would keep getting executed till the user continues to answer.
+
+example :- /* Execution of a loop an unknown number of times */
+
+main( )
+
+{
+
+char another ;
+
+int num ;
+
+do
+
+{
+
+printf ( "Enter a number " ) ;
+
+scanf ( "%d", &num ) ;
+
+printf ( "square of %d is %d", num, num * num ) ;
+
+printf ( "\nWant to enter another number y/n " ) ;
+
+scanf ( " %c", &another ) ;
+
+} 
+while ( another == 'y' ) ;
+
+}
+
+And here is the sample output...
+Enter a number 5
+square of 5 is 25
+Want to enter another number y/n y
+Enter a number 7
+square of 7 is 49
+Want to enter another number y/n n
+
+The break Statement:-  We often come across situations where we want to jump out of a
+loop instantly, without waiting to get back to the conditional test. The keyword break allows us to do this. When break is encountered inside any loop, control automatically passes to the first statement after the loop. A break is usually associated with an if.
+
+there are two ways the control could have reached outside
+the while loop:
+(a) It jumped out because the number proved to be not a prime.
+(b) The loop came to an end because the value of i became equal to num.
+
+The continue Statement:- In some programming situations we want to take the control to the beginning of the loop, bypassing the statements inside the loop,which have not yet been executed. The keyword continue allows us to do this. When continue is encountered inside any loop, control automatically passes to the beginning of the loop.
+
+The do-while Loop:- There is a minor difference between the working of while and dowhile loops. This difference is the place where the condition is tested. The while tests the condition before executing any of the statements within the while loop. As against this, the do-while tests the condition after having executed the statements within the loop.
+
+The do-while loop looks like this:
+
+do
+{
+
+this ;
+and this ;
+and this ;
+and this ;
+
+} while ( this condition is true ) ;
+
+
+
