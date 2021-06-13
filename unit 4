@@ -1,0 +1,139 @@
+The Case Control Structure:- 
+
+Decisions Using switch
+The control statement that allows us to make a decision from the number 
+
+of choices is called a switch, or more correctly a switchcase- default, 
+
+since these three keywords go together to make up the control 
+
+statement. They most often appear as follows:
+
+switch ( integer expression )
+
+{
+
+case constant 1 :
+
+do this ;
+
+case constant 2 :
+
+do this ;
+
+case constant 3 :
+
+do this ;
+
+default :
+
+do this ;
+
+}
+
+The integer expression following the keyword switch is any C expression 
+
+that will yield an integer value. It could be an integer constant like 
+
+1, 2 or 3, or an expression that evaluates to an integer. The keyword 
+
+case is followed by an integer or a character constant. Each constant 
+
+in each case must be different from all the others. The “do this” lines 
+
+in the above form of switch represent any valid C statement. 
+
+example:- 
+
+main( )
+
+{
+
+int i = 2 ;
+
+switch ( i )
+
+{
+
+case 1 :
+printf ( "I am in case 1 \n" ) ;
+break ;
+
+case 2 :
+printf ( "I am in case 2 \n" ) ;
+break ;
+
+case 3 :
+printf ( "I am in case 3 \n" ) ;
+break ;
+
+default :
+printf ( "I am in default \n" ) ;
+
+}
+
+}
+
+The output of this program would be:
+
+I am in case 2
+
+
+The goto Keyword:- In a difficult programming situation it seems so 
+
+easy to use a goto to take the control where you want. However, almost 
+
+always, there is a more elegant way of writing the same program using 
+
+if, for,while and switch. These constructs are far more logical and 
+
+easy to understand.
+
+example:-
+
+main( )
+
+{
+
+int i, j, k ;
+
+for ( i = 1 ; i <= 3 ; i++ )
+
+{
+
+for ( j = 1 ; j <= 3 ; j++ )
+
+{
+
+for ( k = 1 ; k <= 3 ; k++ )
+
+{
+
+if ( i == 3 && j == 3 && k == 3 )
+
+goto out ;
+
+else
+
+printf ( "%d %d %d\n", i, j, k ) ;
+
+}
+
+}
+
+}
+
+out :
+
+printf ( "Out of the loop at last!" ) ;
+
+}
+
+
+
+
+
+
+
+
+
