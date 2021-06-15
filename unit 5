@@ -1,0 +1,233 @@
+Functions & Pointers :-
+
+What is a Function:-
+A function is a self-contained block of statements that perform 
+
+a coherent task of some kind. Every C program can be thought of 
+
+as a collection of these functions. As we noted earlier, using 
+
+a function is something like hiring a person to do a specific 
+
+job for you. Sometimes the interaction with this person is very 
+
+simple; sometimes it’s complex.
+
+example:- 
+main( )
+
+{
+
+printf ( "\nI am in main" ) ;
+
+italy( ) ;
+
+brazil( ) ;
+
+argentina( ) ;
+
+}
+
+{
+printf ( "\nI am in italy" ) ;
+}
+
+brazil( )
+{
+printf ( "\nI am in brazil" ) ;
+}
+
+argentina( )
+{
+printf ( "\nI am in argentina" ) ;
+}
+
+The output of the above program when executed would be as 
+
+under:
+
+I am in main
+I am in italy
+I am in brazil
+I am in argentina
+
+example.
+
+main( )
+
+{
+printf ( "\nI am in main" ) ;
+italy( ) ;
+printf ( "\nI am finally back in main" ) ;
+}
+
+italy( )
+{
+printf ( "\nI am in italy" ) ;
+brazil( ) ;
+printf ( "\nI am back in italy" ) ;
+}
+
+brazil( )
+{
+printf ( "\nI am in brazil" ) ;
+argentina( ) ;
+}
+
+argentina( )
+{
+printf ( "\nI am in argentina" ) ;
+}
+
+And the output would look like...
+
+I am in main
+I am in italy
+I am in brazil
+I am in argentina
+I am back in italy
+I am finally back in main
+
+Call by Value and Call by Reference
+By now we are well familiar with how to call functions. But, if 
+
+you observe carefully, whenever we called a function and passed
+something to it we have always passed the ‘values’ of variables 
+
+to the called function. Such function calls are called ‘calls 
+
+by value’.By this what we mean is, on calling a function we are 
+
+passing values of variables to it. The examples of call by 
+
+value are shown below:
+
+sum = calsum ( a, b, c ) ;
+f = factr ( a ) 
+
+
+Pointer Notation:-
+
+Consider the declaration,
+int i = 3 ;
+
+This declaration tells the C compiler to:
+(a) Reserve space in memory to hold the integer value.
+(b) Associate the name i with this memory location.
+(c) Store the value 3 at this location.
+
+main( )
+
+{
+
+int i = 3 ;
+
+printf ( "\nAddress of i = %u", &i ) ;
+
+printf ( "\nValue of i = %d", i ) ;
+
+}
+
+The output of the above program would be:
+Address of i = 65524
+Value of i = 3
+
+Look at the first printf( ) statement carefully. ‘&’ used in 
+
+this statement is C’s ‘address of’ operator. The expression &i 
+
+returns the address of the variable i, which in this case 
+
+happens to be 65524. Since 65524 represents an address, there 
+
+is no question of a sign being associated with it. Hence it is 
+
+printed out using %u, which is a format specifier for printing 
+
+an unsigned integer. We have been using the ‘&’ operator all 
+
+the time in the scanf( ) statement.
+
+The other pointer operator available in C is ‘*’, called ‘value 
+
+at address’ operator. It gives the value stored at a particular 
+
+address. The ‘value at address’ operator is also called 
+
+‘indirection’ operator.
+
+main( )
+{
+
+int i = 3 ;
+printf ( "\nAddress of i = %u", &i ) ;
+printf ( "\nValue of i = %d", i ) ;
+printf ( "\nValue of i = %d", *( &i ) ) ;
+
+}
+
+The output of the above program would be:
+
+Address of i = 65524
+Value of i = 3
+Value of i = 3
+
+Note that printing the value of *( &i ) is same as printing the 
+
+value of i.
+The expression &i gives the address of the variable i. This 
+
+address can be collected in a variable, by saying,
+j = &i ;
+
+But remember that j is not an ordinary variable like any other
+integer variable. It is a variable that contains the address of 
+
+other variable (i in this case). Since j is a variable the 
+
+compiler must provide it space in the memory. Once again, the 
+
+following memory map would illustrate the contents of i and j.
+
+Recursion:-
+In C, it is possible for the functions to call themselves. A 
+
+function is called ‘recursive’ if a statement within the body 
+
+of a function calls the same function. Sometimes called 
+
+‘circular definition’, recursion is thus the process of 
+
+defining something in terms of itself.
+
+example:- 
+
+main( )
+
+{
+
+int a, fact ;
+printf ( "\nEnter any number " ) ;
+scanf ( "%d", &a ) ;
+fact = factorial ( a ) ;
+printf ( "Factorial value = %d", fact ) ;
+
+}
+
+factorial ( int x )
+
+{
+int f = 1, i ;
+for ( i = x ; i >= 1 ; i-- )
+f = f * i ;
+return ( f ) ;
+}
+
+And here is the output...
+Enter any number 3
+Factorial value = 6
+
+
+
+
+
