@@ -1,0 +1,113 @@
+Arrays:- The C language provides a capability that enables the user to
+design a set of similar data types, called array.
+
+A Simple Program Using Array
+
+Let us try to write a program to find average marks obtained by a
+class of 30 students in a test.
+
+main( )
+
+{
+
+int avg, sum = 0 ;
+int i ;
+int marks[30] ; /* array declaration */
+
+for ( i = 0 ; i <= 29 ; i++ )
+{
+printf ( "\nEnter marks " ) ;
+scanf ( "%d", &marks[i] ) ; /* store data in array */
+}
+
+for ( i = 0 ; i <= 29 ; i++ )
+
+sum = sum + marks[i] ; /* read data from an array*/
+avg = sum / 30 ;
+
+printf ( "\nAverage marks = %d", avg ) ;
+
+}
+
+Array Declaration:- Like other variables an array needs to be declared so
+that the compiler will know what kind of an array and how large
+an array we want.
+
+Array Initialisation:- 
+
+int num[6] = { 2, 4, 12, 5, 45, 5 } ;
+int n[ ] = { 2, 4, 12, 5, 45, 5 } ;
+float press[ ] = { 12.3, 34.2 -23.4, -11.3 } ;
+
+Pointers and Arrays
+To be able to see what pointers have got to do with arrays, let us
+first learn some pointer arithmetic. Consider the following
+example:
+main( )
+
+{
+
+int i = 3, *x ;
+float j = 1.5, *y ;
+char k = 'c', *z ;
+
+printf ( "\nValue of i = %d", i ) ;
+printf ( "\nValue of j = %f", j ) ;
+printf ( "\nValue of k = %c", k ) ;
+
+x = &i ;
+y = &j ;
+z = &k ;
+
+printf ( "\nOriginal address in x = %u", x ) ;
+printf ( "\nOriginal address in y = %u", y ) ;
+printf ( "\nOriginal address in z = %u", z ) ;
+
+x++ ;
+y++ ;
+z++ ;
+
+printf ( "\nNew address in x = %u", x ) ;
+printf ( "\nNew address in y = %u", y ) ;
+printf ( "\nNew address in z = %u", z ) ;
+
+}
+
+Here is the output of the program.
+
+
+
+Value of i = 3
+Value of j = 1.500000
+Value of k = c
+Original address in x = 65524
+Original address in y = 65520
+Original address in z = 65519
+New address in x = 65526
+New address in y = 65524
+New address in z = 65520
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
